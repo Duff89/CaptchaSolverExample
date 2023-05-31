@@ -21,7 +21,9 @@ class FontDownloader:
         self.token = token
 
     def download_font(self):
-        self.driver.get("https://allfont.ru/download/arizonia/")
+        #self.driver.get("https://allfont.ru/download/arizonia/")
+        self.driver.get("https://www.ups.com/track?loc=en_US&tracknum=1Z2E42370304900428&requester=WEMS_1Z/trackdetails")
+        time.sleep(20)
         download_btn = self.driver.find_element(By.CSS_SELECTOR, ".view_download_font_block")
         self.driver.execute_script("arguments[0].click();", download_btn)
         self.__solve_captcha()
