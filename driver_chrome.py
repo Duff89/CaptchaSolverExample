@@ -4,7 +4,6 @@ import undetected_chromedriver as uc
 from random import choice
 from selenium.webdriver.chrome.options import Options
 
-
 class ChromeBrowser:
 
     def __set_up(self):
@@ -12,7 +11,7 @@ class ChromeBrowser:
         _ua = choice(list(map(str.rstrip, open("user_agent_pc.txt").readlines())))
         options.add_argument(f'--user-agent={_ua}')
         # options.add_argument('--headless') # безголовый режим
-        self.driver = uc.Chrome(version_main=self.__get_chrome_version, options=options)
+        self.driver = uc.Chrome(version_main=int(self.__get_chrome_version), options=options, headless=False)
 
     @property
     def __get_chrome_version(self):
@@ -36,3 +35,6 @@ class ChromeBrowser:
     def get_driver(self):
         self.__set_up()
         return self.driver
+
+if __name__=='__main__':
+    ChromeBrowser().get_driver()
