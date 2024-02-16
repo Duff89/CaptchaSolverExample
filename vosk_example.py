@@ -14,7 +14,7 @@ def get_text_from_audio():
     model = vosk.Model(model_path)
 
     """Открываем файл"""
-    audio_file = "audio.mp3" # аудио для распознавания
+    audio_file = "audio (1).mp3" # аудио для распознавания
     wav_file = "audio.wav"
 
     """Конвертируем в файл WAV"""

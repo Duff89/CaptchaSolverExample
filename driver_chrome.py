@@ -6,13 +6,20 @@ from selenium.webdriver.chrome.options import Options
 
 class ChromeBrowser:
 
+    def __init__(self, captcha_app: bool = False):
+        self.captcha_app = captcha_app
+
     def __set_up(self):
         options = Options()
         _ua = choice(list(map(str.rstrip, open("user_agent_pc.txt").readlines())))
         options.add_argument(f'--user-agent={_ua}')
         # options.add_argument('--headless') # безголовый режим
+        if self.captcha_app:
+            _path = os.path.abspath("captcha")
+            options.add_argument(f'--load-extension={_path}')
+            self.driver = uc.Chrome(version_main=int(self.__get_chrome_version), options=options, headless=False)
+            return
         self.driver = uc.Chrome(version_main=int(self.__get_chrome_version), options=options, headless=False)
-
     @property
     def __get_chrome_version(self):
         """Определяет версию chrome в зависимости от платформы"""

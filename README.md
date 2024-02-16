@@ -1,6 +1,9 @@
 
 
-## Автоматическое решение капчи с помощью Python
+### Автоматическое решение капчи с помощью расширения для Chrome
+
+https://youtu.be/ZNqHL3ttbfw
+
 
 ### reCAPTCHA Callback  
 
@@ -28,17 +31,12 @@ https://youtu.be/64eKYYnOuD8
 
 https://youtu.be/d7N2XHIkGbE
 
-### Установка
+Поддержать автора:
+https://yoomoney.ru/to/410014382689862
+или
+2204 1201 0103 5539
 
-Для работы требуется Python 3.5+ и Chrome любой версии. Скопируйте проект и установите зависимости:
-
-```bash
-  pip install -r requirements.txt
-```
-
-### Запуск
-
-Запустите image_captcha.py 
+Контакт для связи: sergeichopolovich1989@gmail.com
 
 
 

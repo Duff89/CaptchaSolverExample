@@ -133,14 +133,18 @@ class RegisterSteam:
 
 
     def _insert_data(self):
+
         self.driver.find_element(By.CSS_SELECTOR, "#i_agree_check").click()
         email_str = f"login_fake_email_{str(random.randint(1, 999))}@mail.ru"
+        email_str = 'hazibula64575@rambler.ru'
         self.driver.find_element(By.CSS_SELECTOR, "#email").send_keys(email_str)
         self.driver.find_element(By.CSS_SELECTOR, "#reenter_email").send_keys(email_str)
 
     def new_register(self):
         self._get_url()
+        print(1)
         self._solve_captcha()
+        print(2)
         self._insert_data()
         self.driver.find_element(By.CSS_SELECTOR, "#createAccountButton").click()
 
